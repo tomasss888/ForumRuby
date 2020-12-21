@@ -1,24 +1,21 @@
-# README
+# ForumRuby (Created by Tomas Stanislovėnas PI18B)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Forum website written with Ruby on Rails
 
-Things you may want to cover:
+## About
+* Forum allows user to login and register to database, create discussions topics and reply to them.
 
-* Ruby version
+## Tools used
+* Project created in Ruby 2.5.5 and in Rails 5.2.1 version.
+* For testing database, XAMPP 8.0.0 was used.
+* Project uses Devside for easier user sessions management.
 
-* System dependencies
+## Database Creation
+* Write your database inside config/database.yml.
+* Type `rails db:create` inside terminal to create database.
+* Type `rails db:migrate` to fill database with predefined tables.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## How to start
+* Type `bundle install`
+* Server initializes with `rails server` command when typed inside terminal
+* Press Ctrl+C to stop the server
