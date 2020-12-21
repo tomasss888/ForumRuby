@@ -1,0 +1,40 @@
+<div class="columns">
+  <div class="column is-12">
+    <h1 class="title is-2 has-text-grey discussion-title"><%= @discussion.title %></h1>
+    <h3 class="subtitle is-5 has-text-grey-lighter">by <%= @discussion.user.username %> </h3>
+
+    <div class="content">Content:</div>
+    <div class="content"><%= markdown(@discussion.content) %></div>
+
+    <div class="level">
+      <div class="level-left"></div>
+      <div class="level-right">
+        <% if discussion_author(@discussion) %>
+        <div class="buttons">
+            <%= link_to 'Edit Discussion', edit_discussion_path(@discussion), class:'button'%>
+            <%= link_to 'Delete', discussion_path(@discussion), method: :delete, data: { confirm: "Delete discussion?" }, class:'button' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <h2 class="subtitle is-5 has-text-black"><%= @discussion.replies.count %> Replies</h2>
+
+    <div id="discussion-replies">
+      <%= render @discussion.replies %>
+    </div>
+
+    <hr />
+
+    <h3 class="subtitle is-3 has-text-grey">Leave a reply</h3>
+    <% if user_signed_in? %>
+      <%= render 'replies/form' %>
+    <% else %>
+    <p>To reply you need to <%= link_to 'login', new_user_session_path %>. Or to sign up
+      <%= link_to 'Sign up', new_user_registration_path %> here.</p>
+    <% end %>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,30 @@
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong><%= reply.user.username %></strong>
+          <br/>
+
+          <small><%= reply.reply %></small>
+        </p>
+      </div>
+      <% if reply_author(reply) || has_role?(:admin) %>
+        <div class="level-left">
+            <%= link_to edit_discussion_reply_path(reply.discussion, reply) do %>
+              <button class="button" style="margin-right: 10px">Edit</button>
+            <% end %>
+
+            <%= link_to [reply.discussion, reply],
+                method: :delete, data: {confirm: "Are you sure ?" } do %>
+            <button class="button" >Delete</button>
+            <% end %>
+        </div>
+
+      <% end %>
+    </div>
+  </article>
+</div>
