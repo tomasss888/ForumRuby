@@ -24,10 +24,6 @@ z
   }
 }
 
-.notification:not(:last-child) {
-  margin-bottom: 0;
-}
-
 .textarea {
   height: 250px;
   font-family: Monaco, san-serif;
@@ -39,6 +35,7 @@ z
   margin-bottom: 0;
 }
 
+// removes thing before label
 abbr[title="required"] {
   display: none;
 }
